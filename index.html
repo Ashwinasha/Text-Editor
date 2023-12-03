@@ -65,7 +65,14 @@
     <div class="toolbar">
 
         
- 
+
+
+
+
+
+        
+        <button id="undoBtn"><img src="Resources\undo.png" alt="Undo" height="25px" width="25px"></button>
+        <button id="redoBtn"><img src="Resources\redo.png" alt="Redo" height="25px" width="25px"></button>
     </div>
 	
 	<br>
@@ -79,6 +86,31 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script>
+
+
+
+
+
+
+
+
+
+
+
+        document.getElementById('undoBtn').addEventListener('click', function () {
+            formatDoc('undo')
+        });
+        document.getElementById('redoBtn').addEventListener('click', function () {
+            formatDoc('redo')
+        });
+        
+        function formatDoc(cmd, value = null) {
+            if (value) {
+                document.execCommand(cmd, false, value);
+            } else {
+                document.execCommand(cmd);
+            }
+        }
 
 
     </script>
