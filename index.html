@@ -64,8 +64,10 @@
 
     <div class="toolbar">
 
-        
+        <button id="boldBtn"><img src="Resources\bold.png" alt="Bold" height="25px" width="25px"></button>
+        <button id="underlineBtn"><img src="Resources\underline.png" alt="Underline" height="30px" width="40px"></button>
         <button id="italicBtn"><img src="Resources\italic.png" alt="Italic" height="25px" width="25px"></button>
+      
     </div>
 	
 	<br>
@@ -79,15 +81,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script>
+      
+        document.getElementById('boldBtn').addEventListener('click', boldText);
+        function boldText() {
+            document.execCommand('bold');
+        }
 
-
-
-
-
+        document.getElementById('underlineBtn').addEventListener('click', underlineText);
+        function underlineText() {
+            document.execCommand('underline');
+        } 
+      
         document.getElementById('italicBtn').addEventListener('click', italicText);
         function italicText() {
             document.execCommand('italic');
         }
+      
     </script>
 </body>
 <!-- Author: [Ashwin] | [CT2019/004] -->
